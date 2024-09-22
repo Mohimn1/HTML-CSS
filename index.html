@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./fonts/font-face.css" />
+  </head>
+  <body>
+    <div id="code"></div>
+  <!---------------------------------------------------------NAVBAR----------------------------------------------------------------------->
+    <nav>
+      <canvas id="starsCanvas"></canvas>
+      <ul>
+        <div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Lebnslauf.html">Lebenslauf</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h2 class="text-accent">Hi, ich bin</h2>
+          <h1 style="color: red;">Mohammad Labbadeh </h1>
+          <h2 class="text-primary"> Studenten   ||  Fleißig || Verantwortungsbewußtsein </h2>
+          <p title="Ich, einfach unverbesserlich...">
+            Ich bin ein Programmierstudent, der leidenschaftlich gerne neue Technologien und Programmiersprachen lernt.
+            Mein Studium konzentriert sich auf Softwareentwicklung, Algorithmen und Datenstrukturen.
+            Ich genieße es, kreative Lösungen für komplexe Probleme zu finden und meine Fähigkeiten in verschiedenen Projekten zu erweitern.
+            In meiner Freizeit experimentiere ich gerne mit neuen Technologien und arbeite an eigenen Softwareprojekten, um mein Wissen zu vertiefen und meine Programmierkenntnisse zu verbessern.
+          </p>
+        </div>
+        <img src="Img/P.jpg" alt="A picture of me." />
+      </section>
+
+    </main>
+
+           <!---------------------------------------------------------JAVASCRIPT ----------------------------------------------------------------------->
+
+    <script>
+
+
+
+
+const symbols = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
+
+function createSymbol() {
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+
+function createGreenCode() {
+    const codeElement = document.getElementById('code');
+    const screenHeight = window.innerHeight;
+
+    setInterval(() => {
+       
+        const symbol = createSymbol();
+
+        
+        const symbolElement = document.createElement('div');
+        symbolElement.textContent = symbol;
+
+        
+        const size = Math.random() * 5 + 3; 
+        const positionX = Math.random() * window.innerWidth; 
+        const speed = Math.random() * 3 + 2;
+        const duration = Math.random() * 2 + 1; 
+
+        symbolElement.style.position = 'absolute';
+        symbolElement.style.top = '0';
+        symbolElement.style.left = positionX + 'px';
+        symbolElement.style.fontSize = size + 'px';
+        symbolElement.style.transition = `top ${duration}s linear`; 
+
+        
+        codeElement.appendChild(symbolElement);
+
+        
+        setTimeout(() => {
+            symbolElement.style.top = screenHeight + 'px';
+        }, 10);
+
+       
+        setTimeout(() => {
+            symbolElement.remove();
+        }, (duration + 10) * 1000);
+    }, 50); 
+}
+
+
+createGreenCode();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./fonts/font-face.css" />
+  </head>
+  <body>
+    <div id="code"></div>
+  <!---------------------------------------------------------NAVBAR----------------------------------------------------------------------->
+    <nav>
+      <canvas id="starsCanvas"></canvas>
+      <ul>
+        <div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Lebnslauf.html">Lebenslauf</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+    
+
+      <!---------------------------------------------------------SKILLS----------------------------------------------------------------------->
+      
+         <!---------------------------------------------------------LEBENSLAUF ----------------------------------------------------------------------->
+
+      
+             <!---------------------------------------------------------CARD----------------------------------------------------------------------->
+
+     <section style="margin-top: 200px;">
+      <div class="card-container">
+        <div class="card">
+          <img src="Img/SCD.jpg" alt="Image 1" class="card-image">
+          <div class="card-content">
+            <h2 class="card-title">SCD scd-dienstleistung</h2>
+            <p class="card-text">Das ist mein erste Projekt .</p>
+            <a href="https://www.scd-dienstleistung.de/index.html" class="card-link">webseite besuchen</a>
+          </div>
+        </div>
+      <!--
+        <div class="card">
+          <img src="image1.jpg" alt="Image 1" class="card-image">
+          <div class="card-content">
+            <h2 class="card-title">Card Title 1</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+            <a href="#" class="card-link">Read More</a>
+          </div>
+        </div>
+       
+        <div class="card">
+          <img src="image2.jpg" alt="Image 2" class="card-image">
+          <div class="card-content">
+            <h2 class="card-title">Card Title 2</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+            <a href="#" class="card-link">Read More</a>
+          </div>
+        </div>
+      </div>
+       -->
+      </section>
+
+     
+    
+    </main>
+
+           <!---------------------------------------------------------JAVASCRIPT ----------------------------------------------------------------------->
+
+    <script>
+
+
+
+
+const symbols = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
+
+function createSymbol() {
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+
+function createGreenCode() {
+    const codeElement = document.getElementById('code');
+    const screenHeight = window.innerHeight;
+
+    setInterval(() => {
+       
+        const symbol = createSymbol();
+
+        
+        const symbolElement = document.createElement('div');
+        symbolElement.textContent = symbol;
+
+        
+        const size = Math.random() * 5 + 3; 
+        const positionX = Math.random() * window.innerWidth; 
+        const speed = Math.random() * 3 + 2;
+        const duration = Math.random() * 2 + 1; 
+
+        symbolElement.style.position = 'absolute';
+        symbolElement.style.top = '0';
+        symbolElement.style.left = positionX + 'px';
+        symbolElement.style.fontSize = size + 'px';
+        symbolElement.style.transition = `top ${duration}s linear`; 
+
+        
+        codeElement.appendChild(symbolElement);
+
+        
+        setTimeout(() => {
+            symbolElement.style.top = screenHeight + 'px';
+        }, 10);
+
+       
+        setTimeout(() => {
+            symbolElement.remove();
+        }, (duration + 10) * 1000);
+    }, 50); 
+}
+
+
+createGreenCode();
+
+    </script>
+  </body>
+</html>

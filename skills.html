@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./fonts/font-face.css" />
+  </head>
+  <body>
+    <div id="code"></div>
+  <!---------------------------------------------------------NAVBAR----------------------------------------------------------------------->
+    <nav>
+      <canvas id="starsCanvas"></canvas>
+      <ul>
+        <div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="Lebnslauf.html">Lebenslauf</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+      </ul>
+    </nav>
+    <main>
+     
+
+      <!---------------------------------------------------------SKILLS----------------------------------------------------------------------->
+      <section class="skills">
+        <ul>
+          <li>
+         <!---------------------------------------------------------HTML----------------------------------------------------------------------->
+            <h3>CSS</h3>
+            <div class="skill-shadow">
+              <div
+                class="skill-bar"
+                style="
+                  width: 70%;
+                  background-color: green;
+                  box-shadow: 5px 0 15px green;
+                "
+              >
+                <span class="value">70</span>
+              </div>
+            </div>
+          </li>
+          <li>
+          <!---------------------------------------------------------Css----------------------------------------------------------------------->
+            <h3>Java SCript </h3>
+            <div class="skill-shadow">
+              <div
+                class="skill-bar"
+                style="
+                  width: 50%;
+                  background-color: blue;
+                  box-shadow: 5px 0 15px blue;
+                "
+              >
+                <span class="value">50</span>
+              </div>
+            </div>
+          </li>
+          <li>
+         <!---------------------------------------------------------JAVASCRIPT----------------------------------------------------------------------->
+            <h3> C#</h3>
+            <div class="skill-shadow">
+              <div
+                class="skill-bar"
+                style="
+                  width: 30%;
+                  background-color: orange;
+                  box-shadow: 5px 0 15px orange;
+                "
+              >
+                <span class="value">30</span>
+              </div>
+            </div>
+          </li>
+          <li>
+       <!---------------------------------------------------------Die Fähigkeit zu lernen ----------------------------------------------------------------------->
+            <h3>HTML </h3>
+            <div class="skill-shadow">
+              <div
+                class="skill-bar"
+                style="
+                  width: 90%;
+                  background-color: purple;
+                  box-shadow: 5px 0 15px purple;
+                "
+              >
+                <span class="value">90</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+         <!---------------------------------------------------------LEBENSLAUF ----------------------------------------------------------------------->
+
+     
+             <!---------------------------------------------------------CARD----------------------------------------------------------------------->
+
+
+     
+    
+    </main>
+
+           <!---------------------------------------------------------JAVASCRIPT ----------------------------------------------------------------------->
+
+    <script>
+
+
+
+
+const symbols = 'abcdefghijklmnopqrstuvwxyz0123456789';
+
+
+function createSymbol() {
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+
+function createGreenCode() {
+    const codeElement = document.getElementById('code');
+    const screenHeight = window.innerHeight;
+
+    setInterval(() => {
+       
+        const symbol = createSymbol();
+
+        
+        const symbolElement = document.createElement('div');
+        symbolElement.textContent = symbol;
+
+        
+        const size = Math.random() * 5 + 3; 
+        const positionX = Math.random() * window.innerWidth; 
+        const speed = Math.random() * 3 + 2;
+        const duration = Math.random() * 2 + 1; 
+
+        symbolElement.style.position = 'absolute';
+        symbolElement.style.top = '0';
+        symbolElement.style.left = positionX + 'px';
+        symbolElement.style.fontSize = size + 'px';
+        symbolElement.style.transition = `top ${duration}s linear`; 
+
+        
+        codeElement.appendChild(symbolElement);
+
+        
+        setTimeout(() => {
+            symbolElement.style.top = screenHeight + 'px';
+        }, 10);
+
+       
+        setTimeout(() => {
+            symbolElement.remove();
+        }, (duration + 10) * 1000);
+    }, 50); 
+}
+
+
+createGreenCode();
+
+    </script>
+  </body>
+</html>
